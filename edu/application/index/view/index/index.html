@@ -1,0 +1,86 @@
+﻿{extend name="public/base" /}
+
+{block name="seo"}
+<title>{$title|default='页面标题'}</title>
+<meta name="keywords" content="{$keywords|default='页面关键字'}">
+<meta name="description" content="{$desc|default='页面描述'}">
+</head>
+<body>
+{/block}
+{block name="content"}
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont"></i> <a href="" class="maincolor">首页</a> 
+		<span class="c-999 en">&gt;</span>
+		<span class="c-666">我的桌面</span> 
+		<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			<p class="f-20 text-success">欢迎进入教学管理系统
+				
+				</p>
+			<p>登录次数：{$Think.session.user_info.login_count} </p>
+			<p>上次登录时间：{:date("Y-m-d H:i:s",$Think.session.user_info.login_time)}</p>
+			
+			<table class="table table-border table-bordered table-bg mt-20">
+				<thead>
+					<tr>
+						<th colspan="2" scope="col">服务器信息</th>
+			</tr>
+		</thead>
+				<tbody>
+					<tr>
+						<th width="30%">服务器计算机名</th>
+						<td><span id="lbServerName">{$Request.host}</span></td>
+			</tr>
+					<tr>
+						<td>服务器IP地址</td>
+						<td>{$Request.ip}</td>
+			</tr>
+					<tr>
+						<td>服务器域名</td>
+						<td>{$Request.domain}</td>
+			</tr>
+					<tr>
+						<td>当前PHP版本 </td>
+						<td>{$Think.const.PHP_VERSION}</td>
+			</tr>
+					<tr>
+						<td>服务器版本 </td>
+						<td>{$Think.const.PHP_OS}</td>
+			</tr>
+					<tr>
+						<td>当前请求URL </td>
+						<td>{$Request.url.true}</td>
+			</tr>
+					<tr>
+						<td>当前Session数量 </td>
+						<td>{:count($_SESSION)}</td>
+			</tr>
+					<tr>
+						<td>当前SessionID </td>
+						<td>{:session_id()}</td>
+			</tr>
+				
+		</tbody>
+	</table>
+</article>
+		<footer class="footer">
+			<p>感谢jQuery、layer、laypage、Validform、UEditor、My97DatePicker、iconfont、Datatables、WebUploaded、icheck、highcharts、bootstrap-Switch<br> Copyright &copy;2015 H-ui.admin v3.0 All Rights Reserved.<br> 本后台系统由<a href="http://www.h-ui.net/" target="_blank" title="H-ui前端框架">H-ui前端框架</a>提供前端技术支持</p>
+</footer>
+</div>
+</section>
+<!-- {__block__} -->
+{/block}
+
+
+<!--请在下方写此页面业务相关的脚本-->
+{block name="js"}
+
+{/block}
+<!--/请在上方写此页面业务相关的脚本-->
+
+<!--此乃百度统计代码，请自行删除-->
+
+<!--/此乃百度统计代码，请自行删除-->
+</body>
+</html>
